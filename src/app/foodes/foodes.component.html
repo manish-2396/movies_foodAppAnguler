@@ -1,0 +1,19 @@
+
+<h1>Foods</h1>
+<div id="input-container">
+  <input type="text" placeholder="Enter food name ..." [(ngModel)]="foodName" />
+  <button (click)="handleSubmit()">Submit</button>
+</div>
+
+<h1 *ngIf="this.loading">Loading</h1>
+
+<div id="food-container">
+  <div *ngFor="let food of foodData">
+    <div>
+      <img src="{{ food.strMealThumb }} " />
+    </div>
+    <h5>{{ food.strCategory }}</h5>
+    <h5>{{ food.strArea }}</h5>
+    <p>{{ food.strInstructions }}</p>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div>
+    <h1>Movies</h1>
+  <div id="input-container">
+    <input
+      type="text"
+      placeholder="Enter movies name ..."
+      [(ngModel)]="moviesName"
+    />
+    <button (click)="handleSubmit()">Submit</button>
+  </div>
+
+  <h1 *ngIf="this.loading">Loading</h1>
+
+  <div id="movies-container">
+    <div *ngFor="let movies of moviesData">
+      <div>
+        <img src="{{ movies.Poster }} " />
+      </div>
+      <h5>{{ movies.Title }}</h5>
+      <h5>{{ movies.Type }}</h5>
+      <p>{{ movies.Year }}</p>
+    </div>
+  </div>
+</div>
